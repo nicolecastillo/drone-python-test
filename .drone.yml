@@ -1,9 +1,33 @@
+---
 kind: pipeline
-name: default
+name: python-2
 
 steps:
 - name: test
-  image: python
+  image: python:2
   commands:
   - pip install -r requirements.txt
   - pytest
+
+---
+kind: pipeline
+name: python-3-3
+
+steps:
+- name: test
+  image: python:3.3
+  commands:
+  - pip install -r requirements.txt
+  - pytest
+
+---
+kind: pipeline
+name: python-3-4
+
+steps:
+- name: test
+  image: python:3.4
+  commands:
+  - pip install -r requirements.txt
+  - pytest
+
